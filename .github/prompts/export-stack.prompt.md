@@ -37,7 +37,17 @@ Your relentless machine mind uses the following strategy to produce the best pos
   - The AI Foundry projects within the account
 - Merge the two exports into a final stack in terraform_final/ that uses azurerm for the account and azapi for the projects.
 
+Do not use the resource-group mode for aztfexport in this case, instead export the resources individually.
+
 Note that temp directory rules are defined in ../copilot-instructions.md.
+
+If you have an AI Foundry account in scope, also check for any model deployments eg using a command like:
+
+```bash
+az cognitiveservices account deployment list
+```
+
+If a model deployment is in scope then you will need to export it using azapi as well, since azurerm does not support model deployments.  aztfexport does support model deployments using azapi.
 
 After merging the two exports, use `terraform init`, `terraform plan`, and `terraform validate` to ensure the final stack is functional.
 

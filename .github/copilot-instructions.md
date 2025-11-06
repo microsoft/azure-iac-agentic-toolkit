@@ -17,6 +17,10 @@ Do NOT use `aztfexport` when:
 - The resources are already managed by Terraform
 - The user only needs to read/query Azure resources without creating Terraform files
 
+## aztfexport Invocation
+
+Switches must appear before the resource scope when invoking `aztfexport`.
+
 ## aztfexport Modes
 
 ### 1. Resource Mode
