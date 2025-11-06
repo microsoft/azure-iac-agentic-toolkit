@@ -1,0 +1,24 @@
+{
+  "name": "AzRevEng",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {},
+    "ghcr.io/devcontainers/features/go:1": {}
+  },
+  "postCreateCommand": "go install github.com/Azure/aztfexport@v0.18.0 && aztfexport config set telemetry_enabled false",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "github.copilot.chat.terminalChatLocation": "terminal"
+      },
+      "extensions": [
+        "ms-python.python",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "HashiCorp.terraform",
+        "ms-vscode.vscode-json"
+      ]
+    }
+  }
+}
