@@ -9,6 +9,7 @@ This project lives on GitHub at: [microsoft/azure-iac-agentic-toolkit](https://g
 # Environment
 
 This project provides a ready to use environment built on [Dev Containers](Documentation/Dev%20Containers.md).  Tools included in the environment are:
+- [Azure CLI](Documentation/Azure%20CLI.md)
 - [Terraform](Documentation/Terraform.md)
 - [aztfexport](Documentation/aztfexport.md)
 - [GitHub Copilot](Documentation/GitHub%20Copilot.md)
