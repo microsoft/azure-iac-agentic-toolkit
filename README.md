@@ -8,43 +8,37 @@ This project lives on GitHub at: [microsoft/azure-iac-agentic-toolkit](https://g
 
 # Environment
 
-## Overview
-
-This project provides a ready to use environment built on [Dev Containers](Documentation/Dev%20Containers.md).  See the Dev Container definition at `.devcontainer/devcontainer.json`.
-
-Tools that this Dev Container includes into the environment are:
-- [aztfexport](Documentation/aztfexport.md)
+This project provides a ready to use environment built on [Dev Containers](Documentation/Dev%20Containers.md).  Tools included in the environment are:
 - [Terraform](Documentation/Terraform.md)
+- [aztfexport](Documentation/aztfexport.md)
 - [GitHub Copilot](Documentation/GitHub%20Copilot.md)
 
-## [aztfexport](Documentation/aztfexport.md)
+For a detailed explanation of the environment setup refer to [Environment](Environment.md).
 
-### Usage Telemetry Collection Opt-Out
+# Using this Toolkit
 
-By default, Azure Export for Terraform collects telemetry data. However, you can easily disable this process - see:
+## Introduction
 
-https://learn.microsoft.com/en-us/azure/developer/terraform/azure-export-for-terraform/export-terraform-overview#data-collection-disclosure
+This toolkit is intended to be run in [Visual Studio Code](Documentation/Visual%20Studio%20Code.md) within a [Dev Containers](Documentation/Dev%20Containers.md).  You can use this toolkit to generate or reverse engineer [Terraform](Documentation/Terraform.md) templates, then move those templates to your project repository.
 
-The Dev Container opts out for you with the `postCreateCommand`:
+## Open the Project
 
-```json
-  "postCreateCommand": "go install github.com/Azure/aztfexport@v0.18.0 && aztfexport config set telemetry_enabled false",
+Open the folder in Visual Studio Code.
+
+## Launching the Dev Container
+
+To launch the Dev Container use the key chord `Ctrl+D Ctrl+C` or press F1 and select **Dev Containers: Reopen in Container**:
+
+![](Documentation/_img/open_dev_container.png)
+
+## Authenticate to Azure
+
+- Open a terminal in Visual Studio Code
+- Invoke the following command:
+
+```bash
+az login
 ```
-
-# Tool Usage
-
-## [aztfexport](Documentation/aztfexport.md)
-
-We suggest walking through the [quickstart](https://learn.microsoft.com/en-us/azure/developer/terraform/azure-export-for-terraform/export-first-resources) to understand the loop of exporting existing resources with `tfstate` that matches the deployed resources.
-
-# Agentic Prompts
-
-## Overview
-
-| Prompt             | Context                                       | Description |
-| ------------------ | --------------------------------------------- | ----------- |
-| `/export-resource` | The name of the [[Resource Group]] to export. |             |
-|                    |                                               |             |
 
 # Notes on Resource Types
 

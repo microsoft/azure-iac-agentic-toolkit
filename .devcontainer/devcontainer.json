@@ -6,7 +6,7 @@
     "ghcr.io/devcontainers/features/terraform:1": {},
     "ghcr.io/devcontainers/features/go:1": {}
   },
-  "postCreateCommand": "go install github.com/Azure/aztfexport@v0.18.0 && aztfexport config set telemetry_enabled false",
+  "postCreateCommand": "go install github.com/Azure/aztfexport@v0.18.0 && aztfexport config set telemetry_enabled false && az extension add --name resource-graph",
   "customizations": {
     "vscode": {
       "settings": {

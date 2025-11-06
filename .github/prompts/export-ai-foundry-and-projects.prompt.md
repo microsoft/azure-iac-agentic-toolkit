@@ -29,6 +29,8 @@ Your relentless machine mind uses the following strategy to produce the best pos
   - The AI Foundry projects within the account
 - Merge the two exports into a final stack in terraform_final/ that uses azurerm for the account and azapi for the projects.
 
+Note that temp directory rules are defined in ../copilot-instructions.md.
+
 After merging the two exports, use `terraform init`, `terraform plan`, and `terraform validate` to ensure the final stack is functional.
 
 # Polishing

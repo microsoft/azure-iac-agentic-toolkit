@@ -2,6 +2,10 @@
 - https://learn.microsoft.com/en-us/azure/developer/terraform/azure-export-for-terraform/export-terraform-overview
 - https://learn.microsoft.com/en-us/azure/developer/terraform/azure-export-for-terraform/export-advanced-scenarios
 
+# Getting Started with aztfexport
+
+We suggest walking through the [quickstart](https://learn.microsoft.com/en-us/azure/developer/terraform/azure-export-for-terraform/export-first-resources) to understand the loop of exporting existing resources with `tfstate` that matches the deployed resources.
+
 # Export a Resource Group
 
 Abstract form:
