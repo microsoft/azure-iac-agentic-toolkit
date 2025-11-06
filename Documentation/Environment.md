@@ -1,12 +1,12 @@
 # Overview
 
-This project provides a ready to use environment built on [Dev Containers](Documentation/Dev%20Containers.md).  See the Dev Container definition at `.devcontainer/devcontainer.json`.
+This project provides a ready to use environment built on [Dev Containers](Dev%20Containers.md).  See the Dev Container definition at `.devcontainer/devcontainer.json`.
 
 Tools that this Dev Container includes into the environment are:
 - [Azure CLI](Azure%20CLI.md)
-- [Terraform](Documentation/Terraform.md)
-- [aztfexport](Documentation/aztfexport.md)
-- [GitHub Copilot](Documentation/GitHub%20Copilot.md)
+- [Terraform](Terraform.md)
+- [aztfexport](aztfexport.md)
+- [GitHub Copilot](GitHub%20Copilot.md)
 
 # [Azure CLI](Azure%20CLI.md)
 
@@ -18,7 +18,7 @@ The Azure CLI is installed via the Dev Container [feature plugin](https://github
 }
 ```
 
-# [Terraform](Documentation/Terraform.md)
+# [Terraform](Terraform.md)
 
 Terraform is installed via the Dev Container [feature plugin](https://github.com/devcontainers/features/tree/main/src/terraform):
 
@@ -28,7 +28,7 @@ Terraform is installed via the Dev Container [feature plugin](https://github.com
 }
 ```
 
-# [aztfexport](Documentation/aztfexport.md)
+# [aztfexport](aztfexport.md)
 
 ## Installation
 
@@ -50,5 +50,5 @@ The Dev Container opts out for you with the following statement in the `postCrea
 aztfexport config set telemetry_enabled false
 ```
 
-# [GitHub Copilot](Documentation/GitHub%20Copilot.md)
+# [GitHub Copilot](GitHub%20Copilot.md)
 

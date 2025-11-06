@@ -13,7 +13,7 @@ This project provides a ready to use environment built on [Dev Containers](Docum
 - [aztfexport](Documentation/aztfexport.md)
 - [GitHub Copilot](Documentation/GitHub%20Copilot.md)
 
-For a detailed explanation of the environment setup refer to [Environment](Environment.md).
+For a detailed explanation of the environment setup refer to [Environment](Documentation/Environment.md).
 
 # Using this Toolkit
 
