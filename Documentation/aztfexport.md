@@ -20,7 +20,7 @@ References:
 - https://learn.microsoft.com/en-us/azure/developer/terraform/azure-export-for-terraform/export-terraform-overview#usage
 - https://learn.microsoft.com/en-us/azure/developer/terraform/azure-export-for-terraform/export-first-resources?tabs=azure-cli#export-an-azure-resource
 
-# Interactive Mode with [azapi](Terraform.md#azapi%20Provider):
+# Interactive Mode with [azapi](Terraform.md#azapi-Provider):
 
 ```bash
 aztfexport resource-group -o terraform_azapi --provider-name=azapi <name>
@@ -28,7 +28,7 @@ aztfexport resource-group -o terraform_azapi --provider-name=azapi <name>
 
 # Export an AI Foundry (not a Hub)
 
-Example invocation using [azapi](Terraform.md#azapi%20Provider):
+Example invocation using [azapi](Terraform.md#azapi-Provider):
 
 ```bash
 aztfexport resource -o terraform_azapi --non-interactive --provider-name=azapi /subscriptions/<sub_id>/resourceGroups/<resource_group_name>/providers/Microsoft.CognitiveServices/accounts/<ai_foundry_name>
@@ -36,7 +36,7 @@ aztfexport resource -o terraform_azapi --non-interactive --provider-name=azapi /
 
 # Export an AI Foundry (not a Hub) Project
 
-Example invocation using [azapi](Terraform.md#azapi%20Provider):
+Example invocation using [azapi](Terraform.md#azapi-Provider):
 
 ```
 aztfexport resource -o terraform_azapi --non-interactive --provider-name=azapi --append /subscriptions/<sub_id>/resourceGroups/<resource_group_name>/providers/Microsoft.CognitiveServices/accounts/<ai_foundry_name>/projects/<project_name>
