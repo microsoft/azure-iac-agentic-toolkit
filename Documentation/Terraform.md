@@ -19,4 +19,3 @@ The Terraform AzAPI provider is a lightweight layer over the Azure ARM (Azure Re
 
 - Documentation (HashiCorp): https://registry.terraform.io/providers/Azure/azapi/latest/docs
 - Documentation (Microsoft): https://learn.microsoft.com/en-us/azure/developer/terraform/overview-azapi-provider
-s
