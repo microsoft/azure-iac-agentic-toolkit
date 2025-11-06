@@ -52,3 +52,34 @@ aztfexport config set telemetry_enabled false
 
 # [GitHub Copilot](GitHub%20Copilot.md)
 
+One of the goals of this project is to make the task of engineering and reverse-engineering Terraform stacks for Azure as automated as possible.  With that in mind we have configured GitHub Copilot with certain settings to allow for a relatively hands-off experience.
+
+We set the maximum turns for Agent mode to 100 (the default is 25) in `.vscode/settings.json`:
+
+```json
+{
+    "chat.agent.maxRequests": 100,
+}
+```
+
+We enable auto approve for certain non-destructive commands so that Agent mode can proceed without you needing to click the Allow button constantly.  This is also done in `.vscode/settings.json`:
+
+```json
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^az account/i": true,
+        "/^az resource/i": true,
+        "/^az rest\\b.*--method GET\\b/i": true,
+        "/^az cognitiveservices/i": true,
+        "/^az graph/i": true,
+        "/^az group\\b.*show\\b/i": true,
+        "/^aztfexport/i": true,
+        "/^terraform\\b.*(output|plan|show|validate)\\b/i": true,
+        "/^bash gen_random.sh( \\d+)?$/i": true,
+        "/^./scripts/gen_random.sh/i": true,
+        "/^bash scripts/gen_random.sh/i": true,
+
+        ...
+
+}
+```

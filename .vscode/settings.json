@@ -1,4 +1,5 @@
 {
+    "chat.agent.maxRequests": 100,
     "chat.tools.terminal.autoApprove": {
         "/^az account/i": true,
         "/^az resource/i": true,
@@ -7,7 +8,7 @@
         "/^az graph/i": true,
         "/^az group\\b.*show\\b/i": true,
         "/^aztfexport/i": true,
-        "/^terraform\\b.*(output|plan|show|validate)\\b/i": true,
+        "/^terraform\\b.*(output|plan|show|state list|validate)\\b/i": true,
         "/^bash gen_random.sh( \\d+)?$/i": true,
         "/^./scripts/gen_random.sh/i": true,
         "/^bash scripts/gen_random.sh/i": true,

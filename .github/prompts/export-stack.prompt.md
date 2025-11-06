@@ -56,6 +56,7 @@ After merging the two exports, use `terraform init`, `terraform plan`, and `terr
 Finally to make the stack re-usable you should:
 - Create a variable for the Azure subscription ID and replace any hard-coded subscription ID's in the Terraform files with references to that variable.
 - Create a variable for the Azure resource group name and replace any hard-coded resource group names in the Terraform files with references to that variable.
+- Create a variable for the Azure region and replace any hard-coded region names in the Terraform files with references to that variable.
 
 # Do Not Do
 
