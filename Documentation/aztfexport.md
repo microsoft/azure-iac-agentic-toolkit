@@ -38,6 +38,9 @@ Example invocation using [azapi](Terraform.md#azapi-Provider):
 aztfexport resource -o terraform_azapi --non-interactive --provider-name=azapi /subscriptions/<sub_id>/resourceGroups/<resource_group_name>/providers/Microsoft.CognitiveServices/accounts/<ai_foundry_name>
 ```
 
+References:
+- https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/create-resource-terraform?tabs=azapi
+
 # Export an AI Foundry (not a Hub) Project
 
 Example invocation using [azapi](Terraform.md#azapi-Provider):
