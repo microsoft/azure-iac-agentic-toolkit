@@ -76,6 +76,48 @@ Note that the export will likely have errors but we will address those later wit
 
 ![](Documentation/_img/export-stack_working.png)
 
+- The agent may take some time to export all the target resources and it may need to export some resources separately into different stacks.  Once it has successfully exported everything it will create a single merged stack that combines all the resources together:
+
+![](export-stack_merge.png)
+
+- the agent will also parameterize certain key values: the region, subscription and resource group name for the deployment.  These are defined in variables.tf and will be populated with your values as the defaults.
+- Finally after merging the stacks it will attempt to validate the merged stack using `terraform init` and `terraform validate`.  It is likely the agent will encounter issues at this stage and if it does, it will further iterate to fix them:
+
+![](export-stack_validate.png)
+
+## Testing and Fixing the Exported Stack
+
+The `/export-stack` agentic prompt that we used above did its best to export and verify the target resources to a Terraform stack, however we can't be sure the stack is valid until we actually deploy it.
+
+When we try to use the stack it is likely that we will find issues that require us to make further changes to the Terraform templates.  This is what the next agentic prompt `/testfix-stack` is designed to do.
+
+`/testfix-stack` will do a test deployment of your stack back to Azure, and will react to any issues it finds by iteratively fixing and retrying the deployment until it can be successfully deployed.  After `/testfix-stack` has completed its work, you will have a useable Terraform stack.
+
+Lets try it:
+
+- If you haven't already done so, export a stack using the `/export-stack` agentic prompt as described above.
+- Once your stack has been exported, invoke the `/testfix-stack` agentic prompt:
+
+![](testfix-stack.png)
+
+- The agent will ask you for the subscription ID and region into which the test deployment should be made.  These will be used as the values passed into the variables defined by the `/export-stack` prompt.  Provide these values to the agent via the chat:
+
+![](testfix-stack_parameters.png)
+
+- From here the agent will attempt to deploy the stack, generating random resource group or other names where necessary.  As it encounters errors it will react by making code changes and retrying the test deployment - for example:
+
+![](testfix-stack_issue.png)
+
+- You shouldn't need to provide input during this process except for allowing the agent to execute `terraform apply` and `terraform destroy` commands as it iterates (we have not marked these as auto-approved in `settings.json`:
+
+![](testfix-stack_terraform_apply_destroy.png)
+
+- If all goes well then eventually the agent will test and fix for all issues and give you a summary report:
+
+![](testfix-stack_summary.png)
+
+- From here you should further review the stack for compliance with your conventions and standards and run any security scanning tools that are part of your engineering standards before putting the stack to use.  Remember that AI can make mistakes, and you are ultimately responsible for the code that you ship even if you use AI to help build it.
+
 # Trademark Notice
 
 Trademarks This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow Microsoft’s Trademark & Brand Guidelines. Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party’s policies.
